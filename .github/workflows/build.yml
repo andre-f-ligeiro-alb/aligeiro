@@ -12,7 +12,7 @@ on:
 jobs:
   portal:
     name: Build + Publish Portal
-
+    runs-on: ubuntu-latest
     if: contains(inputs.components, 'Portal')
 
     steps:
