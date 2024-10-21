@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      components:
+        type: string
+        description: Components
+        required: true
+        default: Portal
+
+jobs:
+  portal:
+    name: Build + Publish Portal
+
+    if: contains(inputs.components, 'Portal')
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: | 
+          echo ${{inputs.components}}
+
